@@ -40,4 +40,16 @@ public struct AnimatingText: View {
         self.interval = interval
         self.onFinished = onFinished
     }
+
+    public init(
+        _ text: String,
+        textColor: Color = .primary,
+        interval: TimeInterval = 0.05,
+        onFinished: @escaping () -> Void = {}
+    ) {
+        self.text = text
+        self.textColor = textColor
+        self.interval = interval
+        self.onFinished = onFinished
+    }
 }
