@@ -35,6 +35,9 @@ struct ContentView: View {
 }
 ```
 
+![Example](assets/example.gif)  
+Example running on iPhone 14 Pro simulator.
+
 ## Minimum Supported Deployment Targets
 
 iOS: `16.0`  
