@@ -18,12 +18,13 @@ A simple SwiftUI `View` that shows a use case is below.
 The supplied text will start animating on appear.
 
 ```swift
+import AnimatingText
 import SwiftUI
 
 struct ContentView: View {
   var body: some View {
     AnimatingText(
-        text: "This is a pretty long string so it will probably take at least two lines to display the whole thing.",
+        text: "This is a pretty long string so it will probably take at least a few lines to display the whole thing.",
         textColor: .primary, // Optional; controls the color of the displayed text (default: Color.primary).
         interval: 0.05, // Optional; controls the time between each character displaying (default: 0.05).
         onFinished: { print("All done!") } // Optional; executes after the text is done animating (default: empty closure).
