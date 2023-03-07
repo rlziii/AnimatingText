@@ -36,7 +36,7 @@ struct ContentView: View {
 
 ## Minimum Supported Deployment Targets
 
-iOS: `16.0`
+iOS: `16.0`  
 macOS: `12.0`
 
 ## License
