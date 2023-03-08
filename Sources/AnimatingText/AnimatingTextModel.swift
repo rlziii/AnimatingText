@@ -6,7 +6,7 @@ class AnimatingTextModel: ObservableObject {
     @Published private(set) var animatingText: AttributedString = ""
     private var cancellables = Set<AnyCancellable>()
 
-    func animate(with text: String, interval: TimeInterval, onFinished: @escaping () -> Void) {
+    func animate(with text: String, interval: TimeInterval, onCompletion: @escaping () -> Void) {
         animatingText = .init(text)
         animatingText.foregroundColor = .clear
 
@@ -26,7 +26,7 @@ class AnimatingTextModel: ObservableObject {
                 }
 
                 if endIndex == text.index(before: text.endIndex) {
-                    onFinished()
+                    onCompletion()
                 }
             }
             .store(in: &cancellables)

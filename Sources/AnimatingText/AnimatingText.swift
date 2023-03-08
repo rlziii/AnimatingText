@@ -5,7 +5,7 @@ public struct AnimatingText: View {
 
     private let text: String
     private let interval: TimeInterval
-    private let onFinished: () -> Void
+    private let onCompletion: () -> Void
 
     @StateObject private var viewModel = AnimatingTextModel()
 
@@ -15,7 +15,7 @@ public struct AnimatingText: View {
         Text(viewModel.animatingText)
             .frame(maxWidth: .infinity, alignment: .leading)
             .onAppear {
-                viewModel.animate(with: text, interval: interval, onFinished: onFinished)
+                viewModel.animate(with: text, interval: interval, onCompletion: onCompletion)
             }
     }
 
@@ -24,20 +24,20 @@ public struct AnimatingText: View {
     public init(
         text: String,
         interval: TimeInterval = 0.05,
-        onFinished: @escaping () -> Void = {}
+        onCompletion: @escaping () -> Void = {}
     ) {
         self.text = text
         self.interval = interval
-        self.onFinished = onFinished
+        self.onCompletion = onCompletion
     }
 
     public init(
         _ text: String,
         interval: TimeInterval = 0.05,
-        onFinished: @escaping () -> Void = {}
+        onCompletion: @escaping () -> Void = {}
     ) {
         self.text = text
         self.interval = interval
-        self.onFinished = onFinished
+        self.onCompletion = onCompletion
     }
 }
