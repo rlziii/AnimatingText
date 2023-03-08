@@ -6,7 +6,7 @@ class AnimatingTextModel: ObservableObject {
     @Published private(set) var animatingText: AttributedString = ""
     private var cancellables = Set<AnyCancellable>()
 
-    func animate(with text: String, textColor: Color, interval: TimeInterval, onFinished: @escaping () -> Void) {
+    func animate(with text: String, interval: TimeInterval, onFinished: @escaping () -> Void) {
         animatingText = .init(text)
         animatingText.foregroundColor = .clear
 
@@ -22,7 +22,7 @@ class AnimatingTextModel: ObservableObject {
                 let endIndex = text.index(text.startIndex, offsetBy: $0)
                 let substring = text[startIndex ... endIndex]
                 if let range = animatingText.range(of: substring) {
-                    animatingText[range].foregroundColor = textColor
+                    animatingText[range].foregroundColor = nil
                 }
 
                 if endIndex == text.index(before: text.endIndex) {
