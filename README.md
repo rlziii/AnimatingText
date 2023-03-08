@@ -1,6 +1,6 @@
 # AnimatingText
 
-A simple SwiftUI View that animates text one character at a time.
+A simple SwiftUI `View` that animates text one character at a time.
 
 ## Setup
 
